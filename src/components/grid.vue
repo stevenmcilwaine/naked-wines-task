@@ -1,24 +1,27 @@
 <template>
   <div class="wines__list">
-    <div
+    <Filters
+      :possibleFilters="possibleFilters"
+    />
+
+    <Item
       class="wines__item"
       v-for="wine in fullJSON"
-      :key="`${wine.winemaker}-${wine.name}`"
-    >
-      <h5>{{wine.winemaker}}</h5>
-    </div>
-
-    <button 
-      v-for="filter in possibleFilters"
-      :key="`button-${filter}`"
-    >
-      {{ `${filter} wine` | titleCase }}
-    </button>
+      :key="`${wine.winemaker} - ${wine.name}`"
+      :wine="wine"
+    />
   </div>
 </template>
 
 <script>
+import Filters from './Filters';
+import Item from './Item';
+
 export default {
+  components: {
+    Filters,
+    Item
+  },
   data() {
     return {
       fullJSON: [],
@@ -55,14 +58,6 @@ export default {
           }
         });
       }
-    }
-  },
-  filters: {
-    titleCase: function (val) {
-      return val.replace(/\w\S*/g, (val) => {
-          return val.charAt(0).toUpperCase() + val.substr(1).toLowerCase();
-        }
-      );
     }
   },
   mounted() {
