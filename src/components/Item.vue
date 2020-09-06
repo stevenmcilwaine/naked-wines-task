@@ -1,9 +1,14 @@
 <template>
   <div class="wine__wrapper">
     <img 
+      class="wine__image"
       :src="getImage(wine)"
       :alt="`${wine.winemaker} ${wine.name} ${wine.year}`"
     />
+    <h3 class="">{{ wine.winemaker | titleCase }}</h3>
+    <h4 class="">{{ wine.name | titleCase }}</h4>
+    <h5 class="">{{ wine.year }}</h5>
+    <p class="">£{{ wine.price }}</p>
   </div>
 </template>
 
@@ -22,10 +27,20 @@ export default {
     kebabCase: function(val) {
       return val.toString().replace(/ /g, '-').replace(/[\'\.]/g, '').toLowerCase();
     }
+  },
+  filters: {
+    titleCase: function (val) {
+      return val.replace(/\w\S*/g, (val) => {
+          return val.charAt(0).toUpperCase() + val.substr(1).toLowerCase();
+        }
+      );
+    }
   }
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  .wine__image {
+    max-width: 200px;
+  }
 </style>
