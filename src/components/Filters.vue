@@ -1,7 +1,7 @@
 <template>
   <div class="wines__filters">
     <button 
-      v-for="filter in possibleFilters"
+      v-for="filter in possibleColourFilters"
       :key="`button-${filter}`"
     >
       {{ filter | titleCase }}
@@ -12,7 +12,7 @@
 <script>
 export default {
   props: {
-    possibleFilters: Array
+    possibleColourFilters: Array
   },
   filters: {
     titleCase: function (val) {

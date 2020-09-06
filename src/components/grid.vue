@@ -1,7 +1,7 @@
 <template>
   <div class="wines__list">
     <Filters
-      :possibleFilters="possibleFilters"
+      :possibleColourFilters="possibleColourFilters"
     />
 
     <Item
@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       fullJSON: [],
-      possibleFilters: [],
+      possibleColourFilters: [],
       activeFilters: []
     }
   },
@@ -53,8 +53,8 @@ export default {
       // Populate possible filters
       if (this.fullJSON.length > 0) {
         [...this.fullJSON].forEach(wine => {
-          if (!this.possibleFilters.includes(wine.colour)) {
-            this.possibleFilters.push(wine.colour);
+          if (!this.possibleColourFilters.includes(wine.colour)) {
+            this.possibleColourFilters.push(wine.colour);
           }
         });
       }
