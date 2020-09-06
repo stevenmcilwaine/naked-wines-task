@@ -1,3 +1,2 @@
-h1 {
-  font-weight: bold;
-}
+// Glob import all in scss folder
+@import "scss/*.scss";

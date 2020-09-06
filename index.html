@@ -2,11 +2,33 @@
 <html>
     <head>
         <title>Naked Wines Task</title>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="Naked Wines task done by Steve McIlwaine"/>
+        <meta name="author" content="Steve McIlwaine" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
         <link href="./dist/main.css" rel="stylesheet" />
     </head>
+
     <body>
-        <div id="wines"></div>
+        <header class="header">
+            <div class="header__wrapper">
+                <a class="header__logo-link" href="#">
+                    <img class="header__logo" src="./dist/img/logo.svg" alt="Naked Wines" />
+                </a>
+                <nav class="header__nav-wrapper">
+                    <ul class="header__nav-list">
+                        <li><a class="header__nav-item" href="https://www.nakedwines.com" rel="noopener noreferrer">Main Site</a></li>
+                        <li><a class="header__nav-item" href="https://www.nakedwines.com/register" rel="noopener noreferrer">Register</a></li>
+                        <li><a class="header__nav-item" href="https://www.nakedwines.com/help" rel="noopener noreferrer">Help</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div id="page"></div>
+        </main>
+
         <script src="./dist/index.js"></script>
     </body>
 </html>

@@ -16,6 +16,13 @@ const config = {
         loader: 'vue-loader'
       },
       {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: 'img/[name].[ext]',
+        },
+      },
+      {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
@@ -28,7 +35,12 @@ const config = {
           'css-loader',
           'sass-loader'
         ]
-      }
+      },
+      {
+        test: /\.(js|scss)$/,
+        enforce: "pre",
+        loader: 'import-glob'
+      },
     ]
   },
   resolve: {

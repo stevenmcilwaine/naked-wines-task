@@ -1,21 +1,22 @@
 <template>
   <div>
-    <h1>
-      {{name}}
-    </h1>
+    <Grid />
   </div>
 </template>
 
 <script>
   import Vue from "vue";
+  import Grid from "./components/grid";
 
-  export default Vue.extend({
-    data: function() {
+  export default {
+    components: {
+      Grid
+    },
+    data() {
       return {
-        name: 'Hello World!',
       }
     },
-  });
+  };
 </script>
 
 
