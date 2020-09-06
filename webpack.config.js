@@ -23,6 +23,14 @@ const config = {
         },
       },
       {
+        type: 'javascript/auto',
+        test: /\.json$/i,
+        loader: 'file-loader',
+        options: {
+          name: 'data/[name].[ext]',
+        },
+      },
+      {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
