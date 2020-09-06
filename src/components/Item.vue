@@ -5,10 +5,10 @@
       :src="getImage(wine)"
       :alt="`${wine.winemaker} ${wine.name} ${wine.year}`"
     />
-    <h3 class="">{{ wine.winemaker | titleCase }}</h3>
-    <h4 class="">{{ wine.name | titleCase }}</h4>
-    <h5 class="">{{ wine.year }}</h5>
-    <p class="">£{{ wine.price }}</p>
+    <h3 class="wine__maker">{{ wine.winemaker | titleCase }}</h3>
+    <h4 class="wine__name">{{ wine.name | titleCase }}</h4>
+    <h5 class="wine__year">{{ wine.year }}</h5>
+    <p class="wine__price">£{{ wine.price }}</p>
   </div>
 </template>
 

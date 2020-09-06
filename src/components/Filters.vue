@@ -1,11 +1,15 @@
 <template>
   <div class="wines__filters">
-    <button 
-      v-for="filter in possibleColourFilters"
-      :key="`button-${filter}`"
-    >
-      {{ filter | titleCase }}
-    </button>
+    <div class="wines__filters-colour">
+      <span class="wines__filters-colour-label">Colour:</span>
+      <button 
+        class="wines__filters-button"
+        v-for="filter in possibleColourFilters"
+        :key="`button-${filter}`"
+      >
+        {{ filter | titleCase }}
+      </button>
+    </div>
   </div>
 </template>
 
