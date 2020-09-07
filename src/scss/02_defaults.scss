@@ -1,6 +1,7 @@
 * { box-sizing: border-box; }
 
 html, body {
+  background-color: $grey--light;
   margin: 0;
   padding: 0;
 }
@@ -22,11 +23,11 @@ p, a, span {
 }
 
 a {
-  color: red;
+  color: $black;
   text-decoration: none;
 
   &:visited {
-    color: inherit;
+    color: $black;
   }
 }
 
@@ -36,30 +37,34 @@ button {
   color: $blue;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  font-size: .875rem;
+  font-size: .75rem;
 
   &.button--red {
     border-color: $red-wine;
     color: $red-wine;
-    &.active { background-color: $red-wine; color: $white; }
+    &.active, &:hover { background-color: $red-wine; color: $white; }
   }
   &.button--rose {
     border-color: $rose-wine;
     color: $rose-wine;
-    &.active { background-color: $rose-wine; color: $white; }
+    &.active, &:hover { background-color: $rose-wine; color: $white; }
   }
   &.button--white {
     border-color: $white-wine;
     color: $white-wine;
-    &.active { background-color: $white-wine; color: $white; }
+    &.active, &:hover { background-color: $white-wine; color: $white; }
   }
 }
 
 .content {
   margin: 0 auto;
   max-width: $max-width;
-  padding: 3rem .75rem;
+  padding: 0 .75rem 2rem;
   width: 100%;
+
+  @include over-md {
+    padding: 1rem .75rem 3rem;
+  }
 }
 
 .m-r-sm { margin-right: .5rem; }

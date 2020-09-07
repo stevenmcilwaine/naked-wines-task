@@ -26,6 +26,8 @@ function countdownTimer(element) {
   } else if (timeNow.getDay() === 6 && timeNow.getHours() >= 17) {
     // if saturday past 5, change to monday delivery deadline
     cutoff.setDate(cutoff.getDate() + 2);
+  } else if (timeNow.getHours() >= 17) {
+    cutoff.setDate(cutoff.getDate() + 1);
   }
   
   // Milliseconds until next cutoff

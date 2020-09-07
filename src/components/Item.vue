@@ -1,14 +1,20 @@
 <template>
-  <div class="wine__wrapper">
-    <img 
+  <div class="wine" :class="`wine--${wine.colour}`" role="presentation">
+    <div 
       class="wine__image"
-      :src="getImage(wine)"
-      :alt="`${wine.winemaker} ${wine.name} ${wine.year}`"
-    />
-    <h3 class="wine__maker">{{ wine.winemaker | titleCase }}</h3>
-    <h4 class="wine__name">{{ wine.name | titleCase }}</h4>
-    <h5 class="wine__year">{{ wine.year }}</h5>
-    <p class="wine__price">£{{ wine.price }}</p>
+      :style="`background-image:url(${getImage(wine)})`"
+    >
+      <div class="wine__image-overlay" role="presentation"></div>
+      <div class="wine__colour-dot" :class="`wine__colour-dot--${wine.colour}`" role="presentation"></div>
+      <span class="wine__colour-dot-text">{{ wine.colour | titleCase }}</span>
+      <i class="fas fa-wine-glass-alt wine__colour-dot-glass"></i>
+    </div>
+
+    <div class="wine__text">
+      <h3 class="wine__maker">{{ wine.winemaker | titleCase }}</h3>
+      <h4 class="wine__name">{{ wine.name | titleCase }} ({{ wine.year }})</h4>
+      <p class="wine__price">£{{ wine.price }}</p>
+    </div>
   </div>
 </template>
 
@@ -38,9 +44,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  .wine__image {
-    max-width: 200px;
-  }
-</style>

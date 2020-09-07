@@ -9,6 +9,7 @@
         :key="`button-${filter}`"
         @click="handleColourButtonClick(filter, $event)"
       >
+        <i class="fas fa-wine-glass-alt wines__filters-button-glass"></i>
         {{ filter | titleCase }}
         <i class="fas fa-times wines__filters-button-cross"></i>
       </button>

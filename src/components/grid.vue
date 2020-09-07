@@ -5,13 +5,15 @@
       @colourFilterClicked="colourFilterClicked"
     />
 
-    <Item
-      class="wines__item"
-      v-for="wine in fullJSON"
-      v-show="activeFilters.includes(wine.colour)"
-      :key="`${wine.winemaker} - ${wine.name}`"
-      :wine="wine"
-    />
+    <div class="wine__grid">
+      <Item
+        class="wines__item"
+        v-for="wine in fullJSON"
+        v-show="activeFilters.includes(wine.colour)"
+        :key="`${wine.winemaker} - ${wine.name}`"
+        :wine="wine"
+      />
+    </div>
   </div>
 </template>
 
