@@ -10,11 +10,12 @@
     justify-content: space-between;
     margin: 0 auto;
     max-width: $max-width;
-    padding: 1.25rem .75rem;
+    padding: 1.25rem .75rem .75rem;
     width: 100%;
 
     @include over-md {
       flex-direction: row;
+      padding: 1.25rem .75rem;
     }
   }
 
@@ -53,24 +54,39 @@
   }
 
   &-item {
+    background-color: $white;
+    border-bottom: 1px solid $white;
+    color: $black;
     display: block;
     height: 40px;
     max-width: 75px;
     position: relative;
     text-align: center;
-    width: 100%;
+    transition: color $anim, background $anim, border $anim;
 
     @include over-md {
+      max-width: unset;
+      padding: 0 .75rem;
       &:not(:last-of-type) { margin-right: 1rem; }
+
+      &:hover {
+        background-color: $grey--light;
+        border-bottom: 1px solid $grey;
+        color: $blue;
+      }
     }
   }
 
   &-link {
-    color: $black;
+    color: inherit;
     display: block;
     font-size: .875rem;
     font-weight: $medium;
     line-height: 40px;
+
+    &:visited {
+      color: inherit;
+    }
   }
 }
 

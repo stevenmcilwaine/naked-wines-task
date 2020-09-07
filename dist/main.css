@@ -117,11 +117,12 @@ button {
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1140px;
-    padding: 1.25rem .75rem;
+    padding: 1.25rem .75rem .75rem;
     width: 100%; }
     @media (min-width: 481px) {
       .header__wrapper {
-        flex-direction: row; } }
+        flex-direction: row;
+        padding: 1.25rem .75rem; } }
   .header__logo-link {
     display: block;
     height: 40px;
@@ -151,21 +152,33 @@ button {
       .header__nav-list {
         justify-content: flex-end; } }
   .header__nav-item {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    color: #333333;
     display: block;
     height: 40px;
     max-width: 75px;
     position: relative;
     text-align: center;
-    width: 100%; }
+    transition: color 0.3s cubic-bezier(0.51, 0.38, 0.61, 0.96), background 0.3s cubic-bezier(0.51, 0.38, 0.61, 0.96), border 0.3s cubic-bezier(0.51, 0.38, 0.61, 0.96); }
     @media (min-width: 481px) {
-      .header__nav-item:not(:last-of-type) {
-        margin-right: 1rem; } }
+      .header__nav-item {
+        max-width: unset;
+        padding: 0 .75rem; }
+        .header__nav-item:not(:last-of-type) {
+          margin-right: 1rem; }
+        .header__nav-item:hover {
+          background-color: #f5f5f5;
+          border-bottom: 1px solid #d8d8d8;
+          color: #0f70e8; } }
   .header__nav-link {
-    color: #333333;
+    color: inherit;
     display: block;
     font-size: .875rem;
     font-weight: 600;
     line-height: 40px; }
+    .header__nav-link:visited {
+      color: inherit; }
 
 .sub-header {
   background-color: #f5f5f5;
@@ -380,7 +393,7 @@ button {
   .wine--rose:hover .wine__text {
     background-color: #e86d83; }
   .wine--white::after {
-    background-color: #b59302; }
+    background-color: #cfa802; }
   .wine--white:hover .wine__text {
     background-color: #e8bc02; }
 

@@ -241,7 +241,7 @@
     &:hover { .wine__text { background-color: $rose-wine; } }
   }
   &--white { 
-    &::after { background-color: darken($white-wine, 10%); } 
+    &::after { background-color: darken($white-wine, 5%); } 
     &:hover { .wine__text { background-color: $white-wine; } }
   }
 }
