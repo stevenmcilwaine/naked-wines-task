@@ -1,22 +1,29 @@
 .header {
   border-bottom: 1px solid $grey;
-  padding: 1.25rem .75rem;
   width: 100%;
-
+  
   &__wrapper {
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
     max-width: $max-width;
+    padding: 1.25rem .75rem;
     width: 100%;
+
+    @include over-md {
+      flex-direction: row;
+    }
   }
 
   &__logo-link {
     display: block;
     height: 40px;
+    margin-bottom: 2rem;
     width: auto;
+
+    @include over-md { margin-bottom: 0; }
   }
 
   &__logo {
@@ -25,15 +32,61 @@
   }
 }
 
+.header__nav {
+  max-width: 320px;
+  width: 100%;
+
+  @include over-md { max-width: unset; }
+
+  &-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+
+    @include over-md {
+      justify-content: flex-end;
+    }
+  }
+
+  &-item {
+    @include over-md {
+      &:not(:last-of-type) { margin-right: 1rem; }
+    }
+  }
+
+  &-link {
+    color: $black;
+    display: block;
+    font-size: .875rem;
+    font-weight: $medium;
+  }
+}
+
 .sub-header {
   background-color: $grey--light;
   border-bottom: 1px solid $grey;
-  padding: .75rem;
+  padding: 1rem .75rem;
   width: 100%;
 
   &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin: 0 auto;
     max-width: $max-width;
     width: 100%;
   }
+
+  &__text {
+    font-family: 'Roboto', 'Montserrat', sans-serif;
+    font-size: .875rem;
+    margin: 0;
+
+    span { font-family: 'Roboto', 'Montserrat', sans-serif; font-size: inherit; }
+  }
+
+  i { color: $blue; }
 }

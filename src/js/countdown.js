@@ -33,7 +33,7 @@ function countdownTimer(element) {
 
   // Delivery day calculating (3 days later, with added day if lands on Sunday)
   let deliveryDay = new Date(cutoff);
-  deliveryDay.setDate(deliveryDay.getDate() + 3);
+  deliveryDay.setDate(deliveryDay.getDate() + 2);
   if (deliveryDay.getDate() === 0) { deliveryDay.setDate(deliveryDay.getDate() + 1); }
 
   // Update timer if it is in DOM
