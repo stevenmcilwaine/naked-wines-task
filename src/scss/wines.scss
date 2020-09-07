@@ -66,10 +66,7 @@
     width: 49.25%;
   }
 
-  &__image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  &__image-wrapper {
     height: 150px;
     overflow: hidden;
     position: relative;
@@ -77,6 +74,19 @@
 
     @include over-md { height: 250px; }
   } 
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    filter: grayscale(0%);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: filter $anim;
+  }
 
   &__image-overlay {
     background-color: rgba(0, 0, 0, 0);
@@ -182,8 +192,12 @@
   &:hover {
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
 
+    .wine__image {
+      filter: grayscale(100%);
+    }
+
     .wine__image-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
     .wine__colour-dot {

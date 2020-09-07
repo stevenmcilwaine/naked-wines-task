@@ -1,9 +1,9 @@
 <template>
   <div class="wine" :class="`wine--${wine.colour}`" role="presentation">
     <div 
-      class="wine__image"
-      :style="`background-image:url(${getImage(wine)})`"
+      class="wine__image-wrapper"
     >
+      <div class="wine__image" :style="`background-image:url(${getImage(wine)})`"></div>
       <div class="wine__image-overlay" role="presentation"></div>
       <div class="wine__colour-dot" :class="`wine__colour-dot--${wine.colour}`" role="presentation"></div>
       <span class="wine__colour-dot-text">{{ wine.colour | titleCase }}</span>

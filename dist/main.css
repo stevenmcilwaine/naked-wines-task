@@ -242,17 +242,25 @@ button {
   @media (min-width: 769px) {
     .wine {
       width: 49.25%; } }
-  .wine__image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .wine__image-wrapper {
     height: 150px;
     overflow: hidden;
     position: relative;
     width: 100%; }
     @media (min-width: 481px) {
-      .wine__image {
+      .wine__image-wrapper {
         height: 250px; } }
+  .wine__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    filter: grayscale(0%);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: filter 0.3s cubic-bezier(0.51, 0.38, 0.61, 0.96); }
   .wine__image-overlay {
     background-color: rgba(0, 0, 0, 0);
     bottom: 0;
@@ -339,8 +347,10 @@ button {
         height: 0; } }
   .wine:hover {
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5); }
+    .wine:hover .wine__image {
+      filter: grayscale(100%); }
     .wine:hover .wine__image-overlay {
-      background-color: rgba(0, 0, 0, 0.5); }
+      background-color: rgba(0, 0, 0, 0.4); }
     .wine:hover .wine__colour-dot {
       height: 40px;
       width: 40px; }
