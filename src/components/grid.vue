@@ -2,11 +2,13 @@
   <div class="wines__list">
     <Filters
       :possibleColourFilters="possibleColourFilters"
+      @colourFilterClicked="colourFilterClicked"
     />
 
     <Item
       class="wines__item"
       v-for="wine in fullJSON"
+      v-show="activeFilters.includes(wine.colour)"
       :key="`${wine.winemaker} - ${wine.name}`"
       :wine="wine"
     />
@@ -45,7 +47,23 @@ export default {
               this[attributeToSet] = JSON.parse(xobj.responseText)['wines'];
             }
       };
-      xobj.send(null); 
+      xobj.send(null);
+    },
+    colourFilterClicked: function(filter) {
+      // If all filters set from standard, unlink possible filters
+      if (this.activeFilters === this.possibleColourFilters) {
+        this.activeFilters = [];
+      }
+
+      // Remove or add to array as required
+      if (this.activeFilters.includes(filter)) {
+        this.activeFilters.splice(this.activeFilters.indexOf(filter), 1);
+        if (this.activeFilters.length === 0) {
+          this.activeFilters = this.possibleColourFilters;
+        }
+      } else {
+        this.activeFilters.push(filter);
+      }
     }
   },
   watch: {
@@ -58,6 +76,8 @@ export default {
           }
         });
       }
+      // Copy over to active by default to show all
+      this.activeFilters = this.possibleColourFilters;
     }
   },
   mounted() {

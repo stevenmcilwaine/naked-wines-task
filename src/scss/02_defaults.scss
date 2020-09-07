@@ -30,6 +30,31 @@ a {
   }
 }
 
+button {
+  background-color: $white;
+  border: 2px solid $blue;
+  color: $blue;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+
+  &.button--red {
+    border-color: $red-wine;
+    color: $red-wine;
+    &.active { background-color: $red-wine; color: $white; }
+  }
+  &.button--rose {
+    border-color: $rose-wine;
+    color: $rose-wine;
+    &.active { background-color: $rose-wine; color: $white; }
+  }
+  &.button--white {
+    border-color: $white-wine;
+    color: $white-wine;
+    &.active { background-color: $white-wine; color: $white; }
+  }
+}
+
 .content {
   margin: 0 auto;
   max-width: $max-width;

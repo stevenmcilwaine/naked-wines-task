@@ -53,6 +53,32 @@ a {
   a:visited {
     color: inherit; }
 
+button {
+  background-color: #ffffff;
+  border: 2px solid #0f70e8;
+  color: #0f70e8;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem; }
+  button.button--red {
+    border-color: #e4481d;
+    color: #e4481d; }
+    button.button--red.active {
+      background-color: #e4481d;
+      color: #ffffff; }
+  button.button--rose {
+    border-color: #e86d83;
+    color: #e86d83; }
+    button.button--rose.active {
+      background-color: #e86d83;
+      color: #ffffff; }
+  button.button--white {
+    border-color: #e8bc02;
+    color: #e8bc02; }
+    button.button--white.active {
+      background-color: #e8bc02;
+      color: #ffffff; }
+
 .content {
   margin: 0 auto;
   max-width: 1140px;
@@ -135,6 +161,28 @@ a {
       font-size: inherit; }
   .sub-header i {
     color: #0f70e8; }
+
+.wines__filters {
+  margin-bottom: 1rem; }
+  @media (min-width: 481px) {
+    .wines__filters {
+      margin-bottom: 1.5rem; } }
+  .wines__filters-colour-label {
+    display: block; }
+    @media (min-width: 481px) {
+      .wines__filters-colour-label {
+        display: inline-block;
+        margin-right: .75rem; } }
+  .wines__filters-button {
+    border-radius: 20px;
+    font-weight: 600;
+    margin: .5rem .5rem .5rem 0;
+    padding: .5rem .75rem; }
+    .wines__filters-button.active .wines__filters-button-cross {
+      display: inline-block !important; }
+  .wines__filters-button-cross {
+    display: none !important;
+    margin-left: .25rem; }
 
 .wine__image {
   max-width: 200px;

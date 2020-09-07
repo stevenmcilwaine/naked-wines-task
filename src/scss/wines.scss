@@ -1,0 +1,30 @@
+.wines__filters {
+  margin-bottom: 1rem;
+
+  @include over-md { margin-bottom: 1.5rem; }
+
+  &-colour-label {
+    display: block;
+
+    @include over-md { 
+      display: inline-block;
+      margin-right: .75rem;
+    }
+  }
+
+  &-button {
+    border-radius: 20px;
+    font-weight: $medium;
+    margin: .5rem .5rem .5rem 0;
+    padding: .5rem .75rem;
+
+    &.active {
+      .wines__filters-button-cross { display: inline-block !important; }
+    }
+  }
+
+  &-button-cross {
+    display: none !important;
+    margin-left: .25rem;
+  }
+}
