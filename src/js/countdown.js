@@ -1,11 +1,20 @@
 const countdown = document.querySelectorAll('[data-js-countdown]');
 
+/**
+ * Change number to string with leading zero support for timer
+ * @param {number} number 
+ * @returns {string}
+ */
 function leadingZeroesString(number) {
   let n = number.toString();
   if (n.length < 2) { n = `0${n}`; }
   return n;
 }
 
+/**
+ * Countdown timer setup
+ * @param {DOMElement} element 
+ */
 function countdownTimer(element) {
   const timeNow = new Date();
   let cutoff = new Date(`${timeNow.getMonth() + 1} ${timeNow.getDate()}, ${timeNow.getFullYear()} 17:00:00`);
@@ -41,7 +50,6 @@ function countdownTimer(element) {
     && element.querySelector('[data-js-countdown-delivery-day]').innerHTML !== ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][deliveryDay.getDay()]) {
     element.querySelector('[data-js-countdown-delivery-day]').innerHTML = `${["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][deliveryDay.getDay()]}`;
   }
-
 }
 
 if (countdown.length > 0) {
