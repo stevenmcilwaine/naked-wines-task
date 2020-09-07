@@ -5,7 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="description" content="Naked Wines task done by Steve McIlwaine"/>
         <meta name="author" content="Steve McIlwaine" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+        <link async href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+        <script async src="https://kit.fontawesome.com/ce521115ac.js" crossorigin="anonymous"></script>
         <link href="./dist/main.css" rel="stylesheet" />
     </head>
 
@@ -24,8 +25,16 @@
                 </nav>
             </div>
         </header>
+        <aside class="sub-header">
+            <div class="sub-header__wrapper">
+                <i class="far fa-clock"></i>
+                <p class="sub-header__text" data-js-countdown>
+                    Order in the next <span data-js-countdown-timer>00:00:00</span> hrs for delivery from <span data-js-countdown-delivery-day>Wednesday</span>, FREE if you spend £100 or more* 
+                </p>
+            </div>
+        </aside>
 
-        <main>
+        <main class="content">
             <div id="page"></div>
         </main>
 

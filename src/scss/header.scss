@@ -1,0 +1,39 @@
+.header {
+  border-bottom: 1px solid $grey;
+  padding: 1.25rem .75rem;
+  width: 100%;
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $max-width;
+    width: 100%;
+  }
+
+  &__logo-link {
+    display: block;
+    height: 40px;
+    width: auto;
+  }
+
+  &__logo {
+    height: 40px;
+    width: auto;
+  }
+}
+
+.sub-header {
+  background-color: $grey--light;
+  border-bottom: 1px solid $grey;
+  padding: .75rem;
+  width: 100%;
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: $max-width;
+    width: 100%;
+  }
+}
