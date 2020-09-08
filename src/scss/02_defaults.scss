@@ -42,17 +42,17 @@ button {
   &.button--red {
     border-color: $red-wine;
     color: $red-wine;
-    &.active, &:hover { background-color: $red-wine; color: $white; }
+    &.active { background-color: $red-wine; color: $white; }
   }
   &.button--rose {
     border-color: $rose-wine;
     color: $rose-wine;
-    &.active, &:hover { background-color: $rose-wine; color: $white; }
+    &.active { background-color: $rose-wine; color: $white; }
   }
   &.button--white {
     border-color: $white-wine;
     color: $white-wine;
-    &.active, &:hover { background-color: $white-wine; color: $white; }
+    &.active { background-color: $white-wine; color: $white; }
   }
 }
 
