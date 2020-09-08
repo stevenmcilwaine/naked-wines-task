@@ -38,6 +38,7 @@ button {
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-size: .75rem;
+  outline: none;
 
   &.button--red {
     border-color: $red-wine;

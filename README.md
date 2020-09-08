@@ -2,6 +2,7 @@
 
 ### Project setup
 To build and update, clone the Git repo to your machine, go to the root folder in a terminal window and run `npm i` to install the necessary node packages. Once done, using `npm run build` will build the files and watch for changes on saving, and `npm run prod` will create minified, production versions of the files.
+_Note: when looking at the page locally, there may be a cross-origin error depending on how you have your browser set up. You may require a virtual server to serve it._
 
 ### Live version
 There is a version of the page hosted on my website as a standalone page, available [here](http://stevenmcilwaine.com/naked-wines-task/). This uses the production build of the page, with minified code and the locked-down version of Vue.
